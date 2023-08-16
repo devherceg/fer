@@ -29,17 +29,18 @@ docker compose up
 Provjeriti jesu li svi mikroservisi registrirani na eureci (localhost:86761)
 
 ----------------------------------------------------------------------------------------------
-
-curl --location "http://localhost:8080/realms/microservices/protocol/openid-connect/token" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "username=test" --data-urlencode "password=test" --data-urlencode "client_id=gateway-client" --data-urlencode "grant_type=password"
+### TESTIRANJE
+```curl --location "http://localhost:8080/realms/microservices/protocol/openid-connect/token" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "username=test" --data-urlencode "password=test" --data-urlencode "client_id=gateway-client" --data-urlencode "grant_type=password"```
 
 uzeti vrijednost "access_token"
 
 *(moguće da će trebati pričekati minutu da gateway registrira mikroservis (dobije se 404))
 
-curl --location "localhost:8760/date-microservice/date" --header "Authorization: Bearer acces_token"
+```curl --location "localhost:8760/date-microservice/date" --header "Authorization: Bearer acces_token"```
 
 ----------------------------------------------------------------------------------------------
 
+### LOKACIJE
 localhost:8080 -> KEYCLOAK
 localhost:8761 -> EUREKA
 localhost:8760 -> GATEWAY
