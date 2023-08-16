@@ -35,8 +35,7 @@ docker compose up
 
 ---
 
-### 
-TESTIRANJE
+### TESTIRANJE
 
 ```
 curl --location "http://localhost:8080/realms/microservices/protocol/openid-connect/token" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "username=test" --data-urlencode "password=test" --data-urlencode "client_id=gateway-client" --data-urlencode "grant_type=password"
