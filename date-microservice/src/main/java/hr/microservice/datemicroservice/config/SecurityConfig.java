@@ -17,10 +17,8 @@ public class SecurityConfig {
     @Value("#{'${auth.urls}'.split(',')}")
     List<String> authUrls;
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        System.out.println(authUrls);
         http
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry.anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.authenticationManagerResolver(new JwtIssuerAuthenticationManagerResolver(authUrls)));
