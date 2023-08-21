@@ -53,8 +53,6 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 
 ### LOKACIJE
 
-localhost:8080 -\> **KEYCLOAK**
-
 localhost:8761 -\> **EUREKA**
 
 localhost:8760 -\> **GATEWAY**
