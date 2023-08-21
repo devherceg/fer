@@ -5,7 +5,7 @@
 
 Pokrenuti *docker desktop*
 
-Pomaknuti se u root dokument
+Pomaknuti se u root direktorij
 
 **Pokrenuti komande:**
 
