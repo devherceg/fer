@@ -53,10 +53,10 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 
 ### LOKACIJE
 
-host.docker.inernal:8080 -\> **KEYCLOAK**
+host.docker.internal:8080 -\> **KEYCLOAK**
 
-host.docker.inernal:8761 -\> **EUREKA**
+host.docker.internal:8761 -\> **EUREKA**
 
-host.docker.inernal:8760 -\> **GATEWAY**
+host.docker.internal:8760 -\> **GATEWAY**
 
 ---
