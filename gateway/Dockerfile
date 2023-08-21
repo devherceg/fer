@@ -1,13 +1,12 @@
-FROM public.ecr.aws/amazoncorretto/amazoncorretto:17.0.6 as builder
+FROM openjdk:17-oracle as builder
 WORKDIR /opt/app
-ARG SPRING_PROFILES_ACTIVE
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN chmod +x ./mvnw
 COPY ./src ./src
 RUN ./mvnw clean install
 
-FROM public.ecr.aws/amazoncorretto/amazoncorretto:17.0.6
+FROM openjdk:17-oracle
 WORKDIR /opt/app
 COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
 ENTRYPOINT ["java", "-jar", "/opt/app/*.jar" ]
