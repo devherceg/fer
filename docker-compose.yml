@@ -1,4 +1,10 @@
-version: '1'
+version: '3'
+
+networks:
+  my-network:
+    name: backend
+    driver: bridge
+
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:22.0.1
@@ -10,9 +16,11 @@ services:
     environment:
      - KEYCLOAK_ADMIN=admin
      - KEYCLOAK_ADMIN_PASSWORD=password
-     - KC_HOSTNAME=keycloak
+     - KC_HOSTNAME=host.docker.internal
     networks:
-      - backend
+      - my-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway" #FOR UNIX
 
   eureka-microservice:
     image: eureka-microservice:1.0.0.
@@ -21,7 +29,9 @@ services:
     depends_on:
       - keycloak
     networks:
-      - backend
+      - my-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway" #FOR UNIX
 
   gateway-microservice:
     image: gateway-microservice:1.0.0.
@@ -33,7 +43,9 @@ services:
       - keycloak
       - eureka-microservice
     networks:
-      - backend
+      - my-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway" #FOR UNIX
 
   date-microservice:
     image: date-microservice:1.0.0.
@@ -41,13 +53,15 @@ services:
      - "8081:8081"
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-microservice:8761/eureka
-      - AUTH_URLS=http://keycloak:8080/realms/microservices
+      - AUTH_URLS=http://host.docker.internal:8080/realms/microservices
     depends_on:
       - keycloak
       - eureka-microservice
       - gateway-microservice
+    extra_hosts:
+      - "host.docker.internal:host-gateway" #FOR UNIX
     networks:
-      - backend
+      - my-network
 
   time-microservice:
     image: time-microservice:1.0.0.
@@ -55,15 +69,13 @@ services:
      - "8082:8082"
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-microservice:8761/eureka
-      - AUTH_URLS=http://keycloak:8080/realms/microservices
+      - AUTH_URLS=http://host.docker.internal:8080/realms/microservices
     depends_on:
       - keycloak
       - eureka-microservice
       - gateway-microservice
       - date-microservice
+    extra_hosts:
+      - "host.docker.internal:host-gateway" #FOR UNIX
     networks:
-      - backend
-
-networks:
-  backend:
-    driver: bridge
+      - my-network
