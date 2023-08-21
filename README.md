@@ -54,7 +54,7 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 ### LOKACIJE
 
 keycloak:8080 -\> **KEYCLOAK**
-*\*Potrebno je u **hosts** file dodati zapis: '127.0.0.1 keycloak'*
+*\*Potrebno je u **hosts** file dodati zapis: 127.0.0.1 keycloak*
 
 localhost:8761 -\> **EUREKA**
 
