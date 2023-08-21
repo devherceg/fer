@@ -53,11 +53,10 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 
 ### LOKACIJE
 
-keycloak:8080 -\> **KEYCLOAK**
-*\*Potrebno je u **hosts** file dodati zapis: 127.0.0.1 keycloak*
+host.docker.inernal:8080 -\> **KEYCLOAK**
 
-localhost:8761 -\> **EUREKA**
+host.docker.inernal:8761 -\> **EUREKA**
 
-localhost:8760 -\> **GATEWAY**
+host.docker.inernal:8760 -\> **GATEWAY**
 
 ---
