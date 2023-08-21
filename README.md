@@ -54,7 +54,7 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 ### LOKACIJE
 
 host.docker.internal:8080 -\> **KEYCLOAK**
-*\*(admin/password)*
+*\*(username:admin/password:password)*
 
 host.docker.internal:8761 -\> **EUREKA**
 
