@@ -31,7 +31,7 @@ docker compose up
 
 ---
 
-***\*Provjeriti jesu li svi mikroservisi registrirani na eureci (localhost:8761)***
+***\*Provjeriti jesu li svi mikroservisi registrirani na eureci (host.docker.internal:8761)***
 
 ---
 
@@ -54,6 +54,7 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 ### LOKACIJE
 
 host.docker.internal:8080 -\> **KEYCLOAK**
+*\*(admin/password)*
 
 host.docker.internal:8761 -\> **EUREKA**
 
