@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon>
+    {{title}}
+  </button>
+
+  <span class="spacer"></span>
+
+  <div fxLayout="row" fxHide fxShow.gt-sm>
+    <button *ngIf="!loginDisplay" (click)="onLogin()" mat-button>Login</button>
+    <button *ngIf="loginDisplay" (click)="onLogout()" mat-button>Logout &nbsp;
+      <span style="font-size: small">({{userName}})</span>
+    </button>
+  </div>
+  <button mat-button [mat-menu-trigger-for]="menu" fxShow fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+
+</mat-toolbar>
+<mat-menu #menu>
+  <button *ngIf="!loginDisplay" (click)="onLogin()" mat-button>Login</button>
+  <button *ngIf="loginDisplay" (click)="onLogout()" mat-button>Logout &nbsp;
+    <span style="font-size: small">({{userName}})</span>
+  </button>
+</mat-menu>
+
+
