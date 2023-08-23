@@ -79,3 +79,10 @@ services:
       - "host.docker.internal:host-gateway" #FOR UNIX
     networks:
       - my-network
+
+  angular-app:
+    build:
+      context: ./skeleton_frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
