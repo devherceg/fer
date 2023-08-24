@@ -24,8 +24,12 @@ cd..
 
 cd gateway
 docker build -t gateway-microservice:1.0.0. .
+cd ..
 
-cd..
+cd skeleton_frontend
+npm i --force
+cd ..
+
 docker compose up
 ```
 
