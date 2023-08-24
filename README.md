@@ -49,6 +49,8 @@ spremiti vrijednost "**access_token**"
 curl --location "localhost:8760/date-microservice/date" --header "Authorization: Bearer acces_token"
 ```
 
+U odgovoru se dobiju dva polja
+"Date" is date mikroservisa, "Time" iz time mikroservisa.
 ---
 
 ### LOKACIJE
@@ -60,4 +62,26 @@ host.docker.internal:8761 -\> **EUREKA**
 
 host.docker.internal:8760 -\> **GATEWAY**
 
+host.docker.internal:4200 -\> **FRONTEND**
+
 ---
+
+
+
+# **UPUTE ZA TESTIRANJE PREKO FRONTENDA**
+
+---
+
+Otići na "**host.docker.internal:4200**"
+
+Kliknuti "LOGIN" u gornjem desnom kutu
+
+username:test
+password:test
+
+
+Kliknuti gumb Call Microservices
+*\*Ako se dogodi error, probati za minutu ponovo (gateway nije još registrirao mikroservise)*
+
+U odgovoru se dobiju dva polja
+"Date" is date mikroservisa, "Time" iz time mikroservisa.
