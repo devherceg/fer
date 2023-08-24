@@ -54,7 +54,7 @@ curl --location "localhost:8760/date-microservice/date" --header "Authorization:
 ```
 
 U odgovoru se dobiju dva polja
-"Date" is date mikroservisa, "Time" iz time mikroservisa.
+"date" is date mikroservisa, "time" iz time mikroservisa.
 ---
 
 ### LOKACIJE
@@ -90,4 +90,4 @@ Kliknuti gumb Call Microservices
 *\*Ako se dogodi error, probati za minutu ponovo (gateway nije još registrirao mikroservise)*
 
 U odgovoru se dobiju dva polja
-"Date" is date mikroservisa, "Time" iz time mikroservisa.
+"date" is date mikroservisa, "time" iz time mikroservisa.
