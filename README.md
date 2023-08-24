@@ -78,7 +78,7 @@ Otići na "**host.docker.internal:4200**"
 Kliknuti "LOGIN" u gornjem desnom kutu
 
 username:test
-, 
+| 
 password:test
 
 
