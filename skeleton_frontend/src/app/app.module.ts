@@ -27,9 +27,6 @@ export function initializeKeycloak(keycloak: KeycloakService) {
       url: 'http://host.docker.internal:8080',
       realm: 'microservices',
       clientId: 'gateway-client',
-/*      url: 'https://keycloak.rao.hr',
-      realm: 'DuPass',
-      clientId: 'gateway-client',*/
     },
     initOptions: {
       checkLoginIframe: false,
