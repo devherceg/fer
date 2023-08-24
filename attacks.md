@@ -17,7 +17,7 @@ Korisnik će vidjeti login zaslon na koji se i inače prijavljuje, ali nakon pri
 
 Zaštita za ovaj tip napada se može postaviti u **Keycloak-u** u postavkama klijenta pod "***Valid redirect URIs***".
 
-![](image.png){width=1167px}
+![](image.png)
 
 
 
@@ -37,7 +37,7 @@ Zaštita za ove napade je sigurna pohrana tokena, te podešavanje vremena trajan
 
 Podešavanje trajanja vremena valjanosti tokena i refresh tokena je moguće u Keycloak-u:
 
-![](image2.png){width=1097px}
+![](image2.png)
 
 # **Scope**
 
@@ -48,4 +48,4 @@ Napadači mogu manipulirati dozvolama kako bi dobili pristup resursima koje ne b
 
 Zaštita za ove napade se može definirati u Keycloak-u tako da se ograniči koje *scope-*ove korisnik može zatražiti za kojeg klijenta, te je moguće definirati koji user može pristupiti kojem *scope*\-u.
 
-![](image3.png){width=1132px}
+![](image3.png)
