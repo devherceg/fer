@@ -56,6 +56,7 @@ U odgovoru se dobiju dva polja
 ### LOKACIJE
 
 host.docker.internal:8080 -\> **KEYCLOAK**
+
 *\*(username:admin/password:password)*
 
 host.docker.internal:8761 -\> **EUREKA**
@@ -77,6 +78,7 @@ Otići na "**host.docker.internal:4200**"
 Kliknuti "LOGIN" u gornjem desnom kutu
 
 username:test
+
 password:test
 
 
